@@ -1,0 +1,11 @@
+{
+    "website_people": {
+        "developer": {
+            "first_name": "Mick",
+            "last_name": "Olthoff",
+            "socials": {
+                "github": "https://github.com/molthoff-student/simple-blog-pages-react" 
+            }
+        }
+    }
+}
