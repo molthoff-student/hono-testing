@@ -2,6 +2,9 @@
     "$schema": "node_modules/wrangler/config-schema.json",
     "name": "hono-testing",
     "compatibility_date": "2025-08-03",
+    "compatibility_flags": [
+        "nodejs_compat"
+    ],
     "main": "./src/index.tsx",
     "assets": {
         "directory": "./public"

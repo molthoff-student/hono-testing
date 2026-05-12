@@ -1,21 +1,24 @@
 import { CommonHeader } from "../common/header";
-import { Meta, MetaProperties } from "../common/meta";
-import { useLocale } from "../locale";
+import { Meta } from "../common/meta";
+import locales from "../locale";
 import { Context } from "hono";
 
 export function HomePage(c: Context): Response {
-    const { locale, msg } = useLocale(c);
+    const { locale, msg } = locales.use();
 
-    const metaData = msg('meta.homePage') as MetaProperties;
+    const homePage = 'meta.homePage.';
+
+    const title = msg(homePage + 'title');
+    const content = msg(homePage + 'content');
 
     return c.jsx(
         <Meta
-            title={metaData.title}
-            content={metaData.content}
+            title={title}
+            content={content}
             locale={locale}
         >
             <CommonHeader />
-            <h1>{metaData.title}</h1>
+            <p>{content}</p>
         </Meta>
     );
 }

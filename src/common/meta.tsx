@@ -1,4 +1,6 @@
-const isDev = process.env.NODE_ENV !== 'production'
+import { isDevEnv } from "..";
+
+const isDev = isDevEnv();
 
 const DEFAULT = {
     VIEWPORT: "width=device-width, initial-scale=1",

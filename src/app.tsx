@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { JSX } from 'hono/jsx/jsx-runtime'
-import { Variables } from ".";
+import { Env } from ".";
 import { renderToString } from "hono/jsx/dom/server";
 import { HomePage } from "./pages/homepage";
 
@@ -10,7 +10,7 @@ declare module 'hono' {
     }
 }
 
-export const app = new Hono<{ Variables: Variables }>();
+export const app = new Hono<Env>();
 
 app.use('*', async (c, next) => {
     c.jsx = (jsx: JSX.Element) => {
